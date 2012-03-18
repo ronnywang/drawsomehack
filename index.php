@@ -33,6 +33,23 @@ if (isset($_GET['set'])) {
 }
 
 ?>
+<html>
+<head>
+<script type="text/javascript">
+
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-30131444-1']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+
+</script>
+</head>
+<body>
 <form method="get">
     alphabets: <input type="text" name="set" placeholder="Ex: AFETNOKMA" value="<?= htmlspecialchars($set) ?>"><br>
     length: <input type="text" name="length" placeholder="2~8" value="<?= htmlspecialchars($length) ?>"><br>
@@ -43,5 +60,5 @@ if (isset($_GET['set'])) {
     <li><?= htmlspecialchars($word) ?></li>
     <?php } ?>
 </ol>
-
-
+</body>
+</html>
