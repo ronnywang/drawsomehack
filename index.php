@@ -10,7 +10,7 @@ if (isset($_GET['set'])) {
 
     $sets = array();
     for ($i = 0; $i < strlen($set); $i ++) {
-        $sets[$set[$i]] ++;
+        $sets[strtolower($set[$i])] ++;
     }
 
     $fp = fopen('dict', 'r');
@@ -23,10 +23,10 @@ if (isset($_GET['set'])) {
 
         $clone_sets = $sets;
         for ($i = 0; $i < $length; $i ++) {
-            if (!$clone_sets[$word[$i]]) {
+            if (!$clone_sets[strtolower($word[$i])]) {
                 continue 2;
             }
-            $clone_sets[$word[$i]] --;
+            $clone_sets[strtolower($word[$i])] --;
         }
         $founds[] = $word;
     }
